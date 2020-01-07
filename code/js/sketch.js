@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-    background(50, 60, 100);
+    background(185, 201, 189);
     drawImage();
     drawWord();
     drawTriesRemaining();
@@ -33,11 +33,11 @@ function drawImage() {
 function checkWinLoseCondition() {
     if (triesRemaining == 0) {
         textSize(32);
-        fill(255, 10, 10);
+        fill(55, 23, 117);
         text('You suck!', (windowWidth / 2), 240);
         textSize(20);
-        fill(200, 200, 200);
-        text(`The correct word was: "${chosenWord}"`, (windowWidth / 2), 280);
+        fill(230, 144, 238);
+        text(`The correct word was: "${chosenWord}"`, (windowWidth / 2), 300);
         noLoop();
         return;
     }
@@ -49,7 +49,7 @@ function checkWinLoseCondition() {
     }
 
     textSize(32);
-    fill(10, 255, 10);
+    fill(10, 244, 10);
     text('You rock!', (windowWidth / 2), 240);
     noLoop();
 }
@@ -62,7 +62,7 @@ function drawWord() {
 
 function drawTriesRemaining() {
     textSize(20);
-    fill(255, 10, 10);
+    fill(55, 23, 117);
     text(`Tries remaining: ${triesRemaining}`, (windowWidth / 2), 160);
 }
 
@@ -73,7 +73,7 @@ function createButtons() {
     buttons.class('buttons');
     for (let i = 0; i < letters.length; i++) {
         button = createButton(letters[i]);
-        button.mouseClicked(() => {buttonClicked(letters[i])});
+        button.mouseClicked(() => { buttonClicked(letters[i]) });
         buttons.child(button);
     }
 }
